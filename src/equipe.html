@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page d'équipage</title>
+  <style>
+    /* CSS pour l'apparence de la page */
+    body {
+      background: url('https://i.pinimg.com/originals/ab/ce/40/abce403ac20277ebfa5052937496c8db.gif') center center fixed;
+      background-size: cover;
+      cursor: crosshair;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    
+    /* CSS pour les encadrés des membres de l'équipe */
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+    }
+    
+    .team-member {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px;
+      width: 300px;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+      position: relative;
+      opacity: 0.8;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .team-member:hover {
+        opacity: 1;
+    }
+    
+    .team-member img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    
+    .team-member h2 {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .team-member p {
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    
+    .social-icons a {
+      margin: 0 5px;
+      color: white;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    
+    .social-icons img {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* CSS pour la barre de navigation */
+    .navbar {
+      background-color: #000;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <!-- Barre de navigation -->
+  <div class="navbar">
+    <a href="#accueil">Accueil</a>
+    <a href="#equipe">Équipe</a>
+    <a href="#contact">Contact</a>
+  </div>
+  
+  <!-- Conteneur des membres de l'équipe -->
+  <div class="team-container">
+    <!-- Membre 1 -->
+    <div class="team-member">
+      <img src="./img/arizaki.jpg" alt="Membre 1">
+      <h2>Yutwz</h2>
+      <p><i>Développeur / chanteur / parolier</i></p>
+    </div>
+    
+    <!-- Membre 2 -->
+    <div class="team-member">
+      <img src="./img/Nissan-Skyline-GT-R-R34-Dyno-Leistungsmessung-3.jpg" alt="Membre 2">
+      <h2>Pierre</h2>
+      <p><i>Studio JuustWood</i></p>
+    </div>
+    
+    <!-- Membre 3 -->
+    <div class="team-member">
+      <img src="./img/giphy (4).gif" alt="Membre 3">
+      <h2>Eline</h2>
+      <p><i>Assistante Mountsky / Gérante Nouveaux artistes / Finances</i></p>
+    </div>
+
+    <div class="team-member">
+        <img src="./img/dcue5pf-cbfb17f3-5c7d-4c11-a82b-656293880f34.gif" alt="Membre 3">
+        <h2>Julia</h2>
+        <p><i>Assistante Mountsky / mixage son / Prod</i></p>
+      </div>
+
+      <div class="team-member">
+        <img src="./img/2d3a46040dbbb12e302a2574cd0f4282.gif" alt="Membre 3">
+        <h2>Xed</h2>
+        <p><i>BeatMaker / Mixage audio / Mountsky / JuustWood / Artiste / Finances</i></p>
+      </div>
+  </div>
+</body>
+</html>

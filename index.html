@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Site de cadres modernes</title>
+  <style>
+    /* CSS pour l'apparence moderne */
+    body {
+      background: url('https://i.pinimg.com/originals/ab/ce/40/abce403ac20277ebfa5052937496c8db.gif') center center fixed;
+      background-size: cover;
+      cursor: crosshair;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    
+    /* CSS pour la barre de navigation */
+    .navbar {
+      background-color: #000;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    
+    /* CSS pour les cadres */
+    .frame-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 100px;
+    }
+    
+    .frame {
+      background-color: #0f0f23;
+      padding: 30px;
+      border-radius: 20px;
+      margin: 20px;
+      max-width: 600px;
+      width: 80%;
+      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+      position: relative;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+    
+    .frame:before,
+    .frame:after {
+      content: "";
+      position: absolute;
+      background-color: #0f0f23;
+      width: 10px;
+      height: 100%;
+      border-radius: 50px;
+      top: 0;
+    }
+    
+    .frame:before {
+      left: -20px;
+    }
+    
+    .frame:after {
+      right: -20px;
+    }
+    
+    .ribbon-container {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      transform: rotate(45deg);
+    }
+    
+    .ribbon {
+      background-color: #ff5a5f;
+      color: white;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 20px 0 0 20px;
+      clip-path: polygon(0 0, 100% 0, 100% 100%);
+      transition: background-color 0.3s ease;
+    }
+    
+    .frame:hover .ribbon {
+      background-color: #ff454a;
+    }
+    
+    .gift-box {
+      width: 100px;
+      height: 100px;
+      background-color: #ff5a5f;
+      position: relative;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      transform: rotate(-20deg);
+      animation: gift 1s infinite;
+    }
+    
+    .gift-box:before,
+    .gift-box:after {
+      content: "";
+      width: 40px;
+      height: 40px;
+      background-color: #0f0f23;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    .gift-box:before {
+      border-radius: 50%;
+      z-index: 1;
+    }
+    
+    .gift-box:after {
+      width: 30px;
+      height: 30px;
+      background-color: #ff5a5f;
+      z-index: 2;
+    }
+    
+    @keyframes gift {
+      0% { transform: rotate(-20deg); }
+      50% { transform: rotate(20deg); }
+      100% { transform: rotate(-20deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Barre de navigation -->
+  <div class="navbar">
+    <a href="#accueil" style="cursor: crosshair;">Accueil</a>
+    <a href="#contacts" style="cursor: crosshair;">Contacts</a>
+    <a href="./src/equipe.html" style="cursor: crosshair;">Équipe</a>
+  </div>
+  
+  <!-- Conteneur des cadres -->
+  <div class="frame-container">
+    <!-- Cadre 1 avec un temps -->
+    <div id="accueil" class="frame">
+      <h2>indice 1</h2>
+      <p>Toutes les nuits je me retrouve dans ce monde incolore avec unique but musical..</p>
+      <div id="countdown" style="color: red;"></div>
+    </div>
+    
+    <!-- Cadre 2 avec dates -->
+    <div id="contacts" class="frame">
+      <h2>Cadre 2</h2>
+      <p>Contenu de la page cadre 2...</p>
+    </div>
+    
+    <!-- Cadre 3 avec dates -->
+    <div id="equipe" class="frame">
+      <h2>Cadre 3</h2>
+      <p>Contenu de la page cadre 3...</p>
+    </div>
+  </div>
+  
+  <!-- Script pour déverrouiller les cadres en fonction de la date actuelle -->
+  <script>
+    var currentDate = new Date();
+    var frameAccueil = document.getElementById("accueil");
+    var frameContacts = document.getElementById("contacts");
+    var frameEquipe = document.getElementById("equipe");
+    var dateAccueil = new Date("2023-05-20");
+    var dateContacts = new Date("2023-05-21");
+    var dateEquipe = new Date("2023-05-22");
+    
+    function unlockFrame(frame, date) {
+      if (currentDate >= date) {
+        frame.style.opacity = "1";
+        frame.style.pointerEvents = "auto";
+      }
+    }
+    
+    unlockFrame(frameAccueil, dateAccueil);
+    unlockFrame(frameContacts, dateContacts);
+    unlockFrame(frameEquipe, dateEquipe);
+  </script>
+  
+  <!-- Script pour afficher le compte à rebours avant la date d'ouverture -->
+  <script>
+    var countdownContainer = document.getElementById("countdown");
+    var countdownDate = new Date("2023-05-10");
+    
+    function updateCountdown() {
+      var now = new Date();
+      var timeRemaining = countdownDate - now;
+      
+      if (timeRemaining > 0) {
+        var hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
+        var minutes = Math.floor((timeRemaining / (1000 * 60)) % 60);
+        var seconds = Math.floor((timeRemaining / 1000) % 60);
+        
+        countdownContainer.textContent = "Temps restant : " + hours + " heures, " + minutes + " minutes, " + seconds + " secondes";
+      } else {
+        countdownContainer.textContent = "";
+      }
+    }
+    
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
