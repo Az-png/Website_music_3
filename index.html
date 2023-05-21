@@ -179,9 +179,11 @@
     var frameAccueil = document.getElementById("accueil");
     var frameContacts = document.getElementById("contacts");
     var frameEquipe = document.getElementById("equipe");
+   var frameIndice4 = document.getElementById("indice4");
     var dateAccueil = new Date("2023-05-20");
     var dateContacts = new Date("2023-05-21");
     var dateEquipe = new Date("2023-05-21");
+ var dateIndice4 = new Date("2023-05-21");
     
     function unlockFrame(frame, date) {
       if (currentDate >= date) {
@@ -193,6 +195,7 @@
     unlockFrame(frameAccueil, dateAccueil);
     unlockFrame(frameContacts, dateContacts);
     unlockFrame(frameEquipe, dateEquipe);
+unlockFrame(frameIndice4, dateIndice4);
   </script>
   
   <!-- Script pour afficher le compte à rebours avant la date d'ouverture -->
